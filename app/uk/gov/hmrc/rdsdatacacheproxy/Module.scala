@@ -52,7 +52,8 @@ class Module extends AppModule:
       bind[PenaltiesDataSource].to(classOf[PenaltiesDataCacheRepository]),
       bind[AssessmentsInAbsenceOfReturnsDataSource].to(classOf[AssessmentsInAbsenceOfReturnsDataCacheRepository]),
       bind[RepaymentsDataSource].to(classOf[RepaymentsDataCacheRepository]),
-      bind[PaymentsDataSource].to(classOf[PaymentsDataCacheRepository]),
+      bind[uk.gov.hmrc.rdsdatacacheproxy.gambling.repositories.PaymentsDataSource]
+        .to(classOf[uk.gov.hmrc.rdsdatacacheproxy.gambling.repositories.PaymentsDataCacheRepository]),
       bind[RepaymentInterestRepaidDataSource].to(classOf[RepaymentInterestRepaidDataCacheRepository]),
       bind[InterestAccruingDataSource].to(classOf[InterestAccruingDataCacheRepository]),
       bind[InterestDataSource].to(classOf[InterestDataCacheRepository]),
@@ -67,4 +68,8 @@ class Module extends AppModule:
       bind[TaxTransactionsDataSource].to(classOf[TaxTransactionsDataCacheRepository]),
       bind[PartnerDetailsDataSource].to(classOf[PartnerDetailsCacheRepository]),
       bind[LicenceDataSource].to(classOf[LicenceCacheRepository])
+      bind[PartnerDetailsDataSource].to(classOf[PartnerDetailsCacheRepository]),
+      bind[TaxTransactionsDataSource].to(classOf[TaxTransactionsDataCacheRepository]),
+      bind[uk.gov.hmrc.rdsdatacacheproxy.ct.repositories.PaymentsDataSource]
+        .to(classOf[uk.gov.hmrc.rdsdatacacheproxy.ct.repositories.PaymentsDataCacheRepository])
     )
